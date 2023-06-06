@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desktop_bbkai", "desktop_bbkai\desktop_bbkai.csproj", "{DB67B071-25FC-4848-8FD4-A89CA083496C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{BB6F06F4-CCD2-43A2-B4C7-F310F53373B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB67B071-25FC-4848-8FD4-A89CA083496C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB67B071-25FC-4848-8FD4-A89CA083496C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB67B071-25FC-4848-8FD4-A89CA083496C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB67B071-25FC-4848-8FD4-A89CA083496C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB6F06F4-CCD2-43A2-B4C7-F310F53373B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6F06F4-CCD2-43A2-B4C7-F310F53373B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6F06F4-CCD2-43A2-B4C7-F310F53373B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6F06F4-CCD2-43A2-B4C7-F310F53373B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EE12D1C-34F1-4BCF-903D-28E6783800EE}
+	EndGlobalSection
+EndGlobal

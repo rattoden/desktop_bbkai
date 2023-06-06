@@ -1,0 +1,108 @@
+﻿<Page x:Class="desktop_bbkai.Pages.DiscUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:desktop_bbkai.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1300"
+      Title="DiscUser">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="8.9*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="30 0 0 0">
+                <Button Content="Добавить" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="27" Click="Button_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="62,0,0,0">
+                <Image Source="D:\3 курс\сайт асп\desktop_bbkai\desktop_bbkai\images\lupa.png" Width="30" Height="30" ToolTip="Введите ФИО для поиска" Margin="960 0 0 0"/>
+                <TextBox x:Name="tb" FontSize="18"  VerticalAlignment="Center" Margin="5 0 0 0" Height="30" Width="200" TextChanged="tb_TextChanged"/>
+            </StackPanel>
+        </Grid>
+        <Separator Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.Column="0">
+                <StackPanel HorizontalAlignment="Center" Margin="0 20 0 0">
+                    <DataGrid x:Name="grid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" HorizontalAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id_u_d}" Header="№" Width="50"/>
+                            <DataGridTemplateColumn Header="Преподаватель" Width="200">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Users.fio_u}" TextWrapping="Wrap" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Дисциплина" Width="200">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Discs.name_d}" TextWrapping="Wrap" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Height="30" Width="30" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_1">
+                                            <Image Source="D:\3 курс\сайт асп\desktop_bbkai\desktop_bbkai\images\edit.png"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Height="30" Width="30" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">
+                                            <Image Source="D:\3 курс\сайт асп\desktop_bbkai\desktop_bbkai\images\delete.png"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+            <Grid Grid.Column="1">
+                <Grid Visibility="Collapsed" x:Name="gridAdd">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Добавление" Width="125"/>
+                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                            <Label Content="Преподаватель"/>
+                            <ComboBox x:Name="prep" DisplayMemberPath="fio_u" SelectedValuePath="fio_u" SelectedIndex="0" Width="400" Height="40" FontSize="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                            <Label Content="Дисциплина"/>
+                            <ComboBox x:Name="dis" DisplayMemberPath="name_d" SelectedValuePath="name_d" SelectedIndex="0" Width="400" Height="40" FontSize="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center">
+                            <Button Content="Добавить" Click="Button_Click2" Width="150"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                <Grid Visibility="Collapsed" x:Name="gridEdit">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Label Content="Изменение" Width="125"/>
+                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                            <Label Content="Преподаватель"/>
+                            <ComboBox x:Name="prep1" DisplayMemberPath="fio_u" SelectedValuePath="fio_u" SelectedIndex="0" Width="400" Height="40" FontSize="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+                            <Label Content="Дисциплина"/>
+                            <ComboBox x:Name="dis1" DisplayMemberPath="name_d" SelectedValuePath="name_d" SelectedIndex="0" Width="400" Height="40" FontSize="20"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center">
+                            <Button Content="Сохранить" Click="Button_Click3" Width="150"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

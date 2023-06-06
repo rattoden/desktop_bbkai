@@ -1,0 +1,148 @@
+﻿<Page x:Class="desktop_bbkai.Pages.RaspisTeacher"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:desktop_bbkai.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RaspisTeacher">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="8.9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Width="45" Height="45" Click="btn_Click" Background="White" BorderBrush="White" x:Name="btn" HorizontalAlignment="Left" Margin="40 0 0 0">
+                <Image Source="D:/3 курс/сайт асп/desktop_bbkai/desktop_bbkai/images/back.png" Width="40" Height="40" ToolTip="Назад"/>
+            </Button>
+            <Label x:Name="lbl" Width="1000" FontSize="24" FontWeight="Bold" Foreground="#2196F3" VerticalAlignment="Center" Margin="50 0 0 0"/>
+        </StackPanel>
+        <Separator Grid.Row="1" />
+        <ScrollViewer Grid.Row="2" Margin="0 0 0 50">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 50">
+                <Label Content="Понедельник" HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="20" Foreground="#2196F3" Width="250" Margin="0 10 0 10"/>
+                <ListView x:Name="gridRaspis1">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Times.name_t}" Header="Время" Width="50"/>
+                            <GridViewColumn Header="Дата" Width="300">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding date_r}" TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Groups.num_g}" Header="Группа" Width="50"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Discs.name_d}" Header="Дисциплина" Width="400"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Vidi.name_v}" Header="Вид занятия" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding aud_r}" Header="Аудитория" Width="70"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding zd_r}" Header="Здание" Width="50"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Content="Вторник" HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="20" Foreground="#2196F3" Width="250" Margin="0 20 0 15"/>
+                <ListView x:Name="gridRaspis2">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Times.name_t}" Header="Время" Width="50"/>
+                            <GridViewColumn Header="Дата" Width="300">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding date_r}" TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Groups.num_g}" Header="Группа" Width="50"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Discs.name_d}" Header="Дисциплина" Width="400"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Vidi.name_v}" Header="Вид занятия" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding aud_r}" Header="Аудитория" Width="70"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding zd_r}" Header="Здание" Width="50"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Content="Среда" HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="20" Foreground="#2196F3" Width="250" Margin="0 20 0 15"/>
+                <ListView x:Name="gridRaspis3">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Times.name_t}" Header="Время" Width="50"/>
+                            <GridViewColumn Header="Дата" Width="300">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding date_r}" TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Groups.num_g}" Header="Группа" Width="50"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Discs.name_d}" Header="Дисциплина" Width="400"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Vidi.name_v}" Header="Вид занятия" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding aud_r}" Header="Аудитория" Width="70"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding zd_r}" Header="Здание" Width="50"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Content="Четверг" HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="20" Foreground="#2196F3" Width="250" Margin="0 20 0 15"/>
+                <ListView x:Name="gridRaspis4">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Times.name_t}" Header="Время" Width="50"/>
+                            <GridViewColumn Header="Дата" Width="300">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding date_r}" TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Groups.num_g}" Header="Группа" Width="50"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Discs.name_d}" Header="Дисциплина" Width="400"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Vidi.name_v}" Header="Вид занятия" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding aud_r}" Header="Аудитория" Width="70"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding zd_r}" Header="Здание" Width="50"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Content="Пятница" HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="20" Foreground="#2196F3" Width="250" Margin="0 20 0 15"/>
+                <ListView x:Name="gridRaspis5">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Times.name_t}" Header="Время" Width="50"/>
+                            <GridViewColumn Header="Дата" Width="300">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding date_r}" TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Groups.num_g}" Header="Группа" Width="50"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Discs.name_d}" Header="Дисциплина" Width="400"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Vidi.name_v}" Header="Вид занятия" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding aud_r}" Header="Аудитория" Width="70"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding zd_r}" Header="Здание" Width="50"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Label Content="Суббота" HorizontalAlignment="Left" FontWeight="DemiBold" FontSize="20" Foreground="#2196F3" Width="250" Margin="0 20 0 15"/>
+                <ListView x:Name="gridRaspis6">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Times.name_t}" Header="Время" Width="50"/>
+                            <GridViewColumn Header="Дата" Width="300">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding date_r}" TextWrapping="Wrap"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Groups.num_g}" Header="Группа" Width="50"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Discs.name_d}" Header="Дисциплина" Width="400"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Vidi.name_v}" Header="Вид занятия" Width="80"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding aud_r}" Header="Аудитория" Width="70"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding zd_r}" Header="Здание" Width="50"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

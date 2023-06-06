@@ -1,0 +1,1139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище bbkaiModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chet">
+          <Key>
+            <PropertyRef Name="id_c" />
+          </Key>
+          <Property Name="id_c" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_c" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Discs">
+          <Key>
+            <PropertyRef Name="id_d" />
+          </Key>
+          <Property Name="id_d" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_d" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Doki">
+          <Key>
+            <PropertyRef Name="id_d" />
+          </Key>
+          <Property Name="id_d" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_u" Type="int" Nullable="false" />
+          <Property Name="id_v" Type="int" Nullable="false" />
+          <Property Name="name_d" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ssilka_d" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="flag_d" Type="int" Nullable="false" />
+          <Property Name="id_di" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="G_D">
+          <Key>
+            <PropertyRef Name="id_g_d" />
+          </Key>
+          <Property Name="id_g_d" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_g" Type="int" Nullable="false" />
+          <Property Name="id_d" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="id_g" />
+          </Key>
+          <Property Name="id_g" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="num_g" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Nedeli">
+          <Key>
+            <PropertyRef Name="id_n" />
+          </Key>
+          <Property Name="id_n" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_n" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="zag" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="txt" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date_n" Type="date" Nullable="false" />
+          <Property Name="txt1" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Otcheti">
+          <Key>
+            <PropertyRef Name="id_o" />
+          </Key>
+          <Property Name="id_o" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_d" Type="int" Nullable="false" />
+          <Property Name="id_u" Type="int" Nullable="false" />
+          <Property Name="ssilka" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date_o" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Raspis">
+          <Key>
+            <PropertyRef Name="id_r" />
+          </Key>
+          <Property Name="id_r" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_g" Type="int" Nullable="false" />
+          <Property Name="id_c" Type="int" Nullable="false" />
+          <Property Name="id_n" Type="int" Nullable="false" />
+          <Property Name="id_t" Type="int" Nullable="false" />
+          <Property Name="date_r" Type="nvarchar" MaxLength="100" />
+          <Property Name="id_d" Type="int" Nullable="false" />
+          <Property Name="id_v" Type="int" Nullable="false" />
+          <Property Name="aud_r" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="zd_r" Type="int" Nullable="false" />
+          <Property Name="id_u" Type="int" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id_r" />
+          </Key>
+          <Property Name="id_r" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_r" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Times">
+          <Key>
+            <PropertyRef Name="id_t" />
+          </Key>
+          <Property Name="id_t" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_t" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U_D">
+          <Key>
+            <PropertyRef Name="id_u_d" />
+          </Key>
+          <Property Name="id_u_d" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_u" Type="int" Nullable="false" />
+          <Property Name="id_d" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_u" />
+          </Key>
+          <Property Name="id_u" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="pass_u" Type="nvarchar" MaxLength="50" />
+          <Property Name="role_u" Type="int" Nullable="false" />
+          <Property Name="fio_u" Type="nvarchar" MaxLength="300" />
+          <Property Name="group_s" Type="int" />
+        </EntityType>
+        <EntityType Name="Vidi">
+          <Key>
+            <PropertyRef Name="id_v" />
+          </Key>
+          <Property Name="id_v" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_v" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__Doki__id_di__6E01572D">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Doki" Type="Self.Doki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="Doki">
+              <PropertyRef Name="id_di" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doki__id_u__5EBF139D">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Doki" Type="Self.Doki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="Doki">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doki__id_v__5FB337D6">
+          <End Role="Vidi" Type="Self.Vidi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Doki" Type="Self.Doki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vidi">
+              <PropertyRef Name="id_v" />
+            </Principal>
+            <Dependent Role="Doki">
+              <PropertyRef Name="id_v" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__G_D__id_d__3B75D760">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="G_D" Type="Self.G_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="G_D">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__G_D__id_g__3A81B327">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="G_D" Type="Self.G_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id_g" />
+            </Principal>
+            <Dependent Role="G_D">
+              <PropertyRef Name="id_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Otcheti__id_d__60A75C0F">
+          <End Role="Doki" Type="Self.Doki" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Otcheti" Type="Self.Otcheti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doki">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="Otcheti">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Otcheti__id_u__6383C8BA">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Otcheti" Type="Self.Otcheti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="Otcheti">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_c__3F466844">
+          <End Role="Chet" Type="Self.Chet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chet">
+              <PropertyRef Name="id_c" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_c" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_d__4222D4EF">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_g__3E52440B">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id_g" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_n__403A8C7D">
+          <End Role="Nedeli" Type="Self.Nedeli" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nedeli">
+              <PropertyRef Name="id_n" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_n" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_t__412EB0B6">
+          <End Role="Times" Type="Self.Times" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Times">
+              <PropertyRef Name="id_t" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_t" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_u__6FE99F9F">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_v__4316F928">
+          <End Role="Vidi" Type="Self.Vidi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vidi">
+              <PropertyRef Name="id_v" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_v" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__U_D__id_d__3D5E1FD2">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="U_D" Type="Self.U_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="U_D">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__U_D__id_u__3C69FB99">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="U_D" Type="Self.U_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="U_D">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__group_s__398D8EEE">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id_g" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="group_s" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__role_u__38996AB5">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id_r" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="role_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище bbkaiModelContainer">
+          <EntitySet Name="Chet" EntityType="Self.Chet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Discs" EntityType="Self.Discs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doki" EntityType="Self.Doki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G_D" EntityType="Self.G_D" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nedeli" EntityType="Self.Nedeli" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Otcheti" EntityType="Self.Otcheti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Raspis" EntityType="Self.Raspis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Times" EntityType="Self.Times" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="U_D" EntityType="Self.U_D" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vidi" EntityType="Self.Vidi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Doki__id_di__6E01572D" Association="Self.FK__Doki__id_di__6E01572D">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="Doki" EntitySet="Doki" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doki__id_u__5EBF139D" Association="Self.FK__Doki__id_u__5EBF139D">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Doki" EntitySet="Doki" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doki__id_v__5FB337D6" Association="Self.FK__Doki__id_v__5FB337D6">
+            <End Role="Vidi" EntitySet="Vidi" />
+            <End Role="Doki" EntitySet="Doki" />
+          </AssociationSet>
+          <AssociationSet Name="FK__G_D__id_d__3B75D760" Association="Self.FK__G_D__id_d__3B75D760">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="G_D" EntitySet="G_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK__G_D__id_g__3A81B327" Association="Self.FK__G_D__id_g__3A81B327">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="G_D" EntitySet="G_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Otcheti__id_d__60A75C0F" Association="Self.FK__Otcheti__id_d__60A75C0F">
+            <End Role="Doki" EntitySet="Doki" />
+            <End Role="Otcheti" EntitySet="Otcheti" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Otcheti__id_u__6383C8BA" Association="Self.FK__Otcheti__id_u__6383C8BA">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Otcheti" EntitySet="Otcheti" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_c__3F466844" Association="Self.FK__Raspis__id_c__3F466844">
+            <End Role="Chet" EntitySet="Chet" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_d__4222D4EF" Association="Self.FK__Raspis__id_d__4222D4EF">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_g__3E52440B" Association="Self.FK__Raspis__id_g__3E52440B">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_n__403A8C7D" Association="Self.FK__Raspis__id_n__403A8C7D">
+            <End Role="Nedeli" EntitySet="Nedeli" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_t__412EB0B6" Association="Self.FK__Raspis__id_t__412EB0B6">
+            <End Role="Times" EntitySet="Times" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_u__6FE99F9F" Association="Self.FK__Raspis__id_u__6FE99F9F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_v__4316F928" Association="Self.FK__Raspis__id_v__4316F928">
+            <End Role="Vidi" EntitySet="Vidi" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__U_D__id_d__3D5E1FD2" Association="Self.FK__U_D__id_d__3D5E1FD2">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="U_D" EntitySet="U_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK__U_D__id_u__3C69FB99" Association="Self.FK__U_D__id_u__3C69FB99">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="U_D" EntitySet="U_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__group_s__398D8EEE" Association="Self.FK__Users__group_s__398D8EEE">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__role_u__38996AB5" Association="Self.FK__Users__role_u__38996AB5">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bbkaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chet">
+          <Key>
+            <PropertyRef Name="id_c" />
+          </Key>
+          <Property Name="id_c" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_c" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Raspis" Relationship="Self.FK__Raspis__id_c__3F466844" FromRole="Chet" ToRole="Raspis" />
+        </EntityType>
+        <EntityType Name="Discs">
+          <Key>
+            <PropertyRef Name="id_d" />
+          </Key>
+          <Property Name="id_d" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_d" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Doki" Relationship="Self.FK__Doki__id_di__6E01572D" FromRole="Discs" ToRole="Doki" />
+          <NavigationProperty Name="G_D" Relationship="Self.FK__G_D__id_d__3B75D760" FromRole="Discs" ToRole="G_D" />
+          <NavigationProperty Name="Raspis" Relationship="Self.FK__Raspis__id_d__4222D4EF" FromRole="Discs" ToRole="Raspis" />
+          <NavigationProperty Name="U_D" Relationship="Self.FK__U_D__id_d__3D5E1FD2" FromRole="Discs" ToRole="U_D" />
+        </EntityType>
+        <EntityType Name="Doki">
+          <Key>
+            <PropertyRef Name="id_d" />
+          </Key>
+          <Property Name="id_d" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_u" Type="Int32" Nullable="false" />
+          <Property Name="id_v" Type="Int32" Nullable="false" />
+          <Property Name="name_d" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ssilka_d" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="flag_d" Type="Int32" Nullable="false" />
+          <Property Name="id_di" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Discs" Relationship="Self.FK__Doki__id_di__6E01572D" FromRole="Doki" ToRole="Discs" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Doki__id_u__5EBF139D" FromRole="Doki" ToRole="Users" />
+          <NavigationProperty Name="Vidi" Relationship="Self.FK__Doki__id_v__5FB337D6" FromRole="Doki" ToRole="Vidi" />
+          <NavigationProperty Name="Otcheti" Relationship="Self.FK__Otcheti__id_d__60A75C0F" FromRole="Doki" ToRole="Otcheti" />
+        </EntityType>
+        <EntityType Name="G_D">
+          <Key>
+            <PropertyRef Name="id_g_d" />
+          </Key>
+          <Property Name="id_g_d" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_g" Type="Int32" Nullable="false" />
+          <Property Name="id_d" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Discs" Relationship="Self.FK__G_D__id_d__3B75D760" FromRole="G_D" ToRole="Discs" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK__G_D__id_g__3A81B327" FromRole="G_D" ToRole="Groups" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="id_g" />
+          </Key>
+          <Property Name="id_g" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="num_g" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="G_D" Relationship="Self.FK__G_D__id_g__3A81B327" FromRole="Groups" ToRole="G_D" />
+          <NavigationProperty Name="Raspis" Relationship="Self.FK__Raspis__id_g__3E52440B" FromRole="Groups" ToRole="Raspis" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Users__group_s__398D8EEE" FromRole="Groups" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Nedeli">
+          <Key>
+            <PropertyRef Name="id_n" />
+          </Key>
+          <Property Name="id_n" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_n" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Raspis" Relationship="Self.FK__Raspis__id_n__403A8C7D" FromRole="Nedeli" ToRole="Raspis" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="zag" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="txt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_n" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="txt1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Otcheti">
+          <Key>
+            <PropertyRef Name="id_o" />
+          </Key>
+          <Property Name="id_o" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_d" Type="Int32" Nullable="false" />
+          <Property Name="id_u" Type="Int32" Nullable="false" />
+          <Property Name="ssilka" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_o" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Doki" Relationship="Self.FK__Otcheti__id_d__60A75C0F" FromRole="Otcheti" ToRole="Doki" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Otcheti__id_u__6383C8BA" FromRole="Otcheti" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Raspis">
+          <Key>
+            <PropertyRef Name="id_r" />
+          </Key>
+          <Property Name="id_r" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_g" Type="Int32" Nullable="false" />
+          <Property Name="id_c" Type="Int32" Nullable="false" />
+          <Property Name="id_n" Type="Int32" Nullable="false" />
+          <Property Name="id_t" Type="Int32" Nullable="false" />
+          <Property Name="date_r" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="id_d" Type="Int32" Nullable="false" />
+          <Property Name="id_v" Type="Int32" Nullable="false" />
+          <Property Name="aud_r" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="zd_r" Type="Int32" Nullable="false" />
+          <Property Name="id_u" Type="Int32" />
+          <NavigationProperty Name="Chet" Relationship="Self.FK__Raspis__id_c__3F466844" FromRole="Raspis" ToRole="Chet" />
+          <NavigationProperty Name="Discs" Relationship="Self.FK__Raspis__id_d__4222D4EF" FromRole="Raspis" ToRole="Discs" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK__Raspis__id_g__3E52440B" FromRole="Raspis" ToRole="Groups" />
+          <NavigationProperty Name="Nedeli" Relationship="Self.FK__Raspis__id_n__403A8C7D" FromRole="Raspis" ToRole="Nedeli" />
+          <NavigationProperty Name="Times" Relationship="Self.FK__Raspis__id_t__412EB0B6" FromRole="Raspis" ToRole="Times" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Raspis__id_u__6FE99F9F" FromRole="Raspis" ToRole="Users" />
+          <NavigationProperty Name="Vidi" Relationship="Self.FK__Raspis__id_v__4316F928" FromRole="Raspis" ToRole="Vidi" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id_r" />
+          </Key>
+          <Property Name="id_r" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_r" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Users__role_u__38996AB5" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Times">
+          <Key>
+            <PropertyRef Name="id_t" />
+          </Key>
+          <Property Name="id_t" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_t" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Raspis" Relationship="Self.FK__Raspis__id_t__412EB0B6" FromRole="Times" ToRole="Raspis" />
+        </EntityType>
+        <EntityType Name="U_D">
+          <Key>
+            <PropertyRef Name="id_u_d" />
+          </Key>
+          <Property Name="id_u_d" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_u" Type="Int32" Nullable="false" />
+          <Property Name="id_d" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Discs" Relationship="Self.FK__U_D__id_d__3D5E1FD2" FromRole="U_D" ToRole="Discs" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__U_D__id_u__3C69FB99" FromRole="U_D" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_u" />
+          </Key>
+          <Property Name="id_u" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pass_u" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="role_u" Type="Int32" Nullable="false" />
+          <Property Name="fio_u" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="group_s" Type="Int32" />
+          <NavigationProperty Name="Doki" Relationship="Self.FK__Doki__id_u__5EBF139D" FromRole="Users" ToRole="Doki" />
+          <NavigationProperty Name="Groups" Relationship="Self.FK__Users__group_s__398D8EEE" FromRole="Users" ToRole="Groups" />
+          <NavigationProperty Name="Otcheti" Relationship="Self.FK__Otcheti__id_u__6383C8BA" FromRole="Users" ToRole="Otcheti" />
+          <NavigationProperty Name="Raspis" Relationship="Self.FK__Raspis__id_u__6FE99F9F" FromRole="Users" ToRole="Raspis" />
+          <NavigationProperty Name="Roles" Relationship="Self.FK__Users__role_u__38996AB5" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="U_D" Relationship="Self.FK__U_D__id_u__3C69FB99" FromRole="Users" ToRole="U_D" />
+        </EntityType>
+        <EntityType Name="Vidi">
+          <Key>
+            <PropertyRef Name="id_v" />
+          </Key>
+          <Property Name="id_v" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_v" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Doki" Relationship="Self.FK__Doki__id_v__5FB337D6" FromRole="Vidi" ToRole="Doki" />
+          <NavigationProperty Name="Raspis" Relationship="Self.FK__Raspis__id_v__4316F928" FromRole="Vidi" ToRole="Raspis" />
+        </EntityType>
+        <Association Name="FK__Raspis__id_c__3F466844">
+          <End Role="Chet" Type="Self.Chet" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chet">
+              <PropertyRef Name="id_c" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_c" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doki__id_di__6E01572D">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Doki" Type="Self.Doki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="Doki">
+              <PropertyRef Name="id_di" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__G_D__id_d__3B75D760">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="G_D" Type="Self.G_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="G_D">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_d__4222D4EF">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__U_D__id_d__3D5E1FD2">
+          <End Role="Discs" Type="Self.Discs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="U_D" Type="Self.U_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discs">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="U_D">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doki__id_u__5EBF139D">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Doki" Type="Self.Doki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="Doki">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Doki__id_v__5FB337D6">
+          <End Role="Vidi" Type="Self.Vidi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Doki" Type="Self.Doki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vidi">
+              <PropertyRef Name="id_v" />
+            </Principal>
+            <Dependent Role="Doki">
+              <PropertyRef Name="id_v" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Otcheti__id_d__60A75C0F">
+          <End Role="Doki" Type="Self.Doki" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Otcheti" Type="Self.Otcheti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doki">
+              <PropertyRef Name="id_d" />
+            </Principal>
+            <Dependent Role="Otcheti">
+              <PropertyRef Name="id_d" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__G_D__id_g__3A81B327">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="G_D" Type="Self.G_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id_g" />
+            </Principal>
+            <Dependent Role="G_D">
+              <PropertyRef Name="id_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_g__3E52440B">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id_g" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_g" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__group_s__398D8EEE">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="id_g" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="group_s" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_n__403A8C7D">
+          <End Role="Nedeli" Type="Self.Nedeli" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nedeli">
+              <PropertyRef Name="id_n" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_n" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Otcheti__id_u__6383C8BA">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Otcheti" Type="Self.Otcheti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="Otcheti">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_t__412EB0B6">
+          <End Role="Times" Type="Self.Times" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Times">
+              <PropertyRef Name="id_t" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_t" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_u__6FE99F9F">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Raspis__id_v__4316F928">
+          <End Role="Vidi" Type="Self.Vidi" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Raspis" Type="Self.Raspis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vidi">
+              <PropertyRef Name="id_v" />
+            </Principal>
+            <Dependent Role="Raspis">
+              <PropertyRef Name="id_v" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__role_u__38996AB5">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id_r" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="role_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__U_D__id_u__3C69FB99">
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="U_D" Type="Self.U_D" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_u" />
+            </Principal>
+            <Dependent Role="U_D">
+              <PropertyRef Name="id_u" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bbkaiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chet" EntityType="Self.Chet" />
+          <EntitySet Name="Discs" EntityType="Self.Discs" />
+          <EntitySet Name="Doki" EntityType="Self.Doki" />
+          <EntitySet Name="G_D" EntityType="Self.G_D" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" />
+          <EntitySet Name="Nedeli" EntityType="Self.Nedeli" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="Otcheti" EntityType="Self.Otcheti" />
+          <EntitySet Name="Raspis" EntityType="Self.Raspis" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Times" EntityType="Self.Times" />
+          <EntitySet Name="U_D" EntityType="Self.U_D" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Vidi" EntityType="Self.Vidi" />
+          <AssociationSet Name="FK__Raspis__id_c__3F466844" Association="Self.FK__Raspis__id_c__3F466844">
+            <End Role="Chet" EntitySet="Chet" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doki__id_di__6E01572D" Association="Self.FK__Doki__id_di__6E01572D">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="Doki" EntitySet="Doki" />
+          </AssociationSet>
+          <AssociationSet Name="FK__G_D__id_d__3B75D760" Association="Self.FK__G_D__id_d__3B75D760">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="G_D" EntitySet="G_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_d__4222D4EF" Association="Self.FK__Raspis__id_d__4222D4EF">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__U_D__id_d__3D5E1FD2" Association="Self.FK__U_D__id_d__3D5E1FD2">
+            <End Role="Discs" EntitySet="Discs" />
+            <End Role="U_D" EntitySet="U_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doki__id_u__5EBF139D" Association="Self.FK__Doki__id_u__5EBF139D">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Doki" EntitySet="Doki" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Doki__id_v__5FB337D6" Association="Self.FK__Doki__id_v__5FB337D6">
+            <End Role="Vidi" EntitySet="Vidi" />
+            <End Role="Doki" EntitySet="Doki" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Otcheti__id_d__60A75C0F" Association="Self.FK__Otcheti__id_d__60A75C0F">
+            <End Role="Doki" EntitySet="Doki" />
+            <End Role="Otcheti" EntitySet="Otcheti" />
+          </AssociationSet>
+          <AssociationSet Name="FK__G_D__id_g__3A81B327" Association="Self.FK__G_D__id_g__3A81B327">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="G_D" EntitySet="G_D" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_g__3E52440B" Association="Self.FK__Raspis__id_g__3E52440B">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__group_s__398D8EEE" Association="Self.FK__Users__group_s__398D8EEE">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_n__403A8C7D" Association="Self.FK__Raspis__id_n__403A8C7D">
+            <End Role="Nedeli" EntitySet="Nedeli" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Otcheti__id_u__6383C8BA" Association="Self.FK__Otcheti__id_u__6383C8BA">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Otcheti" EntitySet="Otcheti" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_t__412EB0B6" Association="Self.FK__Raspis__id_t__412EB0B6">
+            <End Role="Times" EntitySet="Times" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_u__6FE99F9F" Association="Self.FK__Raspis__id_u__6FE99F9F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Raspis__id_v__4316F928" Association="Self.FK__Raspis__id_v__4316F928">
+            <End Role="Vidi" EntitySet="Vidi" />
+            <End Role="Raspis" EntitySet="Raspis" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__role_u__38996AB5" Association="Self.FK__Users__role_u__38996AB5">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__U_D__id_u__3C69FB99" Association="Self.FK__U_D__id_u__3C69FB99">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="U_D" EntitySet="U_D" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище bbkaiModelContainer" CdmEntityContainer="bbkaiEntities">
+          <EntitySetMapping Name="Chet">
+            <EntityTypeMapping TypeName="bbkaiModel.Chet">
+              <MappingFragment StoreEntitySet="Chet">
+                <ScalarProperty Name="id_c" ColumnName="id_c" />
+                <ScalarProperty Name="name_c" ColumnName="name_c" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discs">
+            <EntityTypeMapping TypeName="bbkaiModel.Discs">
+              <MappingFragment StoreEntitySet="Discs">
+                <ScalarProperty Name="id_d" ColumnName="id_d" />
+                <ScalarProperty Name="name_d" ColumnName="name_d" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doki">
+            <EntityTypeMapping TypeName="bbkaiModel.Doki">
+              <MappingFragment StoreEntitySet="Doki">
+                <ScalarProperty Name="id_d" ColumnName="id_d" />
+                <ScalarProperty Name="id_u" ColumnName="id_u" />
+                <ScalarProperty Name="id_v" ColumnName="id_v" />
+                <ScalarProperty Name="name_d" ColumnName="name_d" />
+                <ScalarProperty Name="ssilka_d" ColumnName="ssilka_d" />
+                <ScalarProperty Name="flag_d" ColumnName="flag_d" />
+                <ScalarProperty Name="id_di" ColumnName="id_di" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_D">
+            <EntityTypeMapping TypeName="bbkaiModel.G_D">
+              <MappingFragment StoreEntitySet="G_D">
+                <ScalarProperty Name="id_g_d" ColumnName="id_g_d" />
+                <ScalarProperty Name="id_g" ColumnName="id_g" />
+                <ScalarProperty Name="id_d" ColumnName="id_d" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="bbkaiModel.Groups">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="id_g" ColumnName="id_g" />
+                <ScalarProperty Name="num_g" ColumnName="num_g" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nedeli">
+            <EntityTypeMapping TypeName="bbkaiModel.Nedeli">
+              <MappingFragment StoreEntitySet="Nedeli">
+                <ScalarProperty Name="id_n" ColumnName="id_n" />
+                <ScalarProperty Name="name_n" ColumnName="name_n" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="bbkaiModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="zag" ColumnName="zag" />
+                <ScalarProperty Name="txt" ColumnName="txt" />
+                <ScalarProperty Name="date_n" ColumnName="date_n" />
+                <ScalarProperty Name="txt1" ColumnName="txt1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Otcheti">
+            <EntityTypeMapping TypeName="bbkaiModel.Otcheti">
+              <MappingFragment StoreEntitySet="Otcheti">
+                <ScalarProperty Name="id_o" ColumnName="id_o" />
+                <ScalarProperty Name="id_d" ColumnName="id_d" />
+                <ScalarProperty Name="id_u" ColumnName="id_u" />
+                <ScalarProperty Name="ssilka" ColumnName="ssilka" />
+                <ScalarProperty Name="date_o" ColumnName="date_o" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Raspis">
+            <EntityTypeMapping TypeName="bbkaiModel.Raspis">
+              <MappingFragment StoreEntitySet="Raspis">
+                <ScalarProperty Name="id_r" ColumnName="id_r" />
+                <ScalarProperty Name="id_g" ColumnName="id_g" />
+                <ScalarProperty Name="id_c" ColumnName="id_c" />
+                <ScalarProperty Name="id_n" ColumnName="id_n" />
+                <ScalarProperty Name="id_t" ColumnName="id_t" />
+                <ScalarProperty Name="date_r" ColumnName="date_r" />
+                <ScalarProperty Name="id_d" ColumnName="id_d" />
+                <ScalarProperty Name="id_v" ColumnName="id_v" />
+                <ScalarProperty Name="aud_r" ColumnName="aud_r" />
+                <ScalarProperty Name="zd_r" ColumnName="zd_r" />
+                <ScalarProperty Name="id_u" ColumnName="id_u" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="bbkaiModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="id_r" ColumnName="id_r" />
+                <ScalarProperty Name="name_r" ColumnName="name_r" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Times">
+            <EntityTypeMapping TypeName="bbkaiModel.Times">
+              <MappingFragment StoreEntitySet="Times">
+                <ScalarProperty Name="id_t" ColumnName="id_t" />
+                <ScalarProperty Name="name_t" ColumnName="name_t" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="U_D">
+            <EntityTypeMapping TypeName="bbkaiModel.U_D">
+              <MappingFragment StoreEntitySet="U_D">
+                <ScalarProperty Name="id_u_d" ColumnName="id_u_d" />
+                <ScalarProperty Name="id_u" ColumnName="id_u" />
+                <ScalarProperty Name="id_d" ColumnName="id_d" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="bbkaiModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id_u" ColumnName="id_u" />
+                <ScalarProperty Name="login_u" ColumnName="login_u" />
+                <ScalarProperty Name="pass_u" ColumnName="pass_u" />
+                <ScalarProperty Name="role_u" ColumnName="role_u" />
+                <ScalarProperty Name="fio_u" ColumnName="fio_u" />
+                <ScalarProperty Name="group_s" ColumnName="group_s" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vidi">
+            <EntityTypeMapping TypeName="bbkaiModel.Vidi">
+              <MappingFragment StoreEntitySet="Vidi">
+                <ScalarProperty Name="id_v" ColumnName="id_v" />
+                <ScalarProperty Name="name_v" ColumnName="name_v" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

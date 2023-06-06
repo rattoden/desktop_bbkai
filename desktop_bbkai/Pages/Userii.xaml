@@ -1,0 +1,61 @@
+﻿<Page x:Class="desktop_bbkai.Pages.Userii"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:desktop_bbkai.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1300"
+      Title="Пользователи">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="8.9*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="30 0 0 0">
+                <Button Content="Добавить пользователя" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Height="27" Click="Button_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="62,0,0,0">
+                <Image Source="D:\3 курс\сайт асп\desktop_bbkai\desktop_bbkai\images\lupa.png" Width="30" Height="30" ToolTip="Введите ФИО для поиска" Margin="960 0 0 0"/>
+                <TextBox x:Name="tb" FontSize="18"  VerticalAlignment="Center" Margin="5 0 0 0" Height="30" Width="200" TextChanged="tb_TextChanged"/>
+            </StackPanel>
+        </Grid>
+        <Separator Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <ScrollViewer>
+                <StackPanel HorizontalAlignment="Center">
+                    <DataGrid x:Name="grid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Margin="20" HorizontalAlignment="Center">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding id_u}" Header="№" Width="50"/>
+                            <DataGridTextColumn Binding="{Binding login_u}" Header="Логин" Width="200"/>
+                            <DataGridTextColumn Binding="{Binding pass_u}" Header="Пароль" Width="200"/>
+                            <DataGridTextColumn Binding="{Binding Roles.name_r}" Header="Роль" Width="100"/>
+                            <DataGridTextColumn Binding="{Binding fio_u}" Header="ФИО" Width="300"/>
+                            <DataGridTextColumn Binding="{Binding Groups.num_g}" Header="Группа"/>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Height="30" Width="30" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_1">
+                                            <Image Source="D:\3 курс\сайт асп\desktop_bbkai\desktop_bbkai\images\edit.png"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Height="30" Width="30" Background="Transparent" BorderBrush="Transparent" Click="Button_Click_2">
+                                            <Image Source="D:\3 курс\сайт асп\desktop_bbkai\desktop_bbkai\images\delete.png"/>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

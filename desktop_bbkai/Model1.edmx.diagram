@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="70ccd646b6bf47e485c8d74a9fb4152a" Name="Diagram1">
+        <EntityTypeShape EntityType="bbkaiModel.Chet" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Discs" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Doki" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.G_D" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Groups" Width="1.5" PointX="3.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Nedeli" Width="1.5" PointX="3.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.News" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Otcheti" Width="1.5" PointX="8.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Raspis" Width="1.5" PointX="6" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Roles" Width="1.5" PointX="1.5" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Times" Width="1.5" PointX="3.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.U_D" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Users" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bbkaiModel.Vidi" Width="1.5" PointX="3.75" PointY="22.625" IsExpanded="true" />
+        <AssociationConnector Association="bbkaiModel.FK__Raspis__id_c__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Doki__id_di__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__G_D__id_d__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Raspis__id_d__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__U_D__id_d__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Doki__id_u__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Doki__id_v__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Otcheti__id_d__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__G_D__id_g__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Raspis__id_g__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Users__group_s__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Raspis__id_n__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Otcheti__id_u__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Raspis__id_t__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Raspis__id_u__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Raspis__id_v__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__Users__role_u__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="bbkaiModel.FK__U_D__id_u__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
